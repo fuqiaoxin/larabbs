@@ -33,3 +33,5 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
 //Route::get('/home', 'HomeController@index')->name('home');    // 主页路由上面已经有了，此处就不需要了
+
+Route::resource('users','UsersController',['only' => ['show','edit','update']]);
