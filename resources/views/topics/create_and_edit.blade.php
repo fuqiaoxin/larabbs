@@ -30,7 +30,7 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                         <label for="title-field">Title</label>
-                        <input class="form-control" type="text" name="title" id="title-field" value="{{ old('title', $topic->title ) }}" />
+                        <input class="form-control" type="text" name="title" id="title-field" value="{{ old('title', $topic->title ) }}" >
                     </div>
                     <div class="form-group">
                         <label for="category_id-field">话题分类</label>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="body-field">话题内容</label>
-                        <textarea name="body" id="body-field" class="form-control" rows="3" required>{{ old('body', $topic->body ) }}</textarea>
+                        <textarea name="body" id="editor" class="form-control" rows="3" required>{{ old('body', $topic->body ) }}</textarea>
                     </div>
 
                     <div class="well well-sm">
@@ -57,3 +57,21 @@
 </div>
 
 @endsection
+
+@section('styles')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/simditor.css') }}">
+@stop
+
+@section('scripts')
+    <script src="{{ asset('js/module.js') }}"></script>
+    <script src="{{ asset('js/hotkeys.js') }}"></script>
+    <script src="{{ asset('js/uploader.js') }}"></script>
+    <script src="{{ asset('js/simditor.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            var editor = new Simditor({
+                textarea: $('#editor'),
+            });
+        });
+    </script>
+@stop
