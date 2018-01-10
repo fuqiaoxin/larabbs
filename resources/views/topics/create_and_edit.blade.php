@@ -37,7 +37,7 @@
                         <select name="category_id" class="form-control" required>
                             <option value="" hidden disabled selected>请选择分类</option>
                             @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" @if($topic->category_id && $topic->category_id == $category->id) selected @endif>{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -78,7 +78,7 @@
                     connectionCount: 3,
                     leaveConfirm: '文件上传中，关闭此页面将取消上传。'
                 },
-                pasteImage: true,
+                pasteImage: true,       // 粘贴图片上传
             });
         });
     </script>
