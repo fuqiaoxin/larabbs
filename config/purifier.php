@@ -29,9 +29,7 @@ return [
             'AutoFormat.AutoParagraph' => true,
             'AutoFormat.RemoveEmpty'   => true,
         ],
-        'test'    => [
-            'Attr.EnableID' => 'true',
-        ],
+
         "youtube" => [
             "HTML.SafeIframe"      => 'true',
             "URI.SafeIframeRegexp" => "%^(http://|https://|//)(www.youtube.com/embed/|player.vimeo.com/video/)%",
@@ -96,9 +94,6 @@ return [
         ],
         'custom_attributes' => [
             ['a', 'target', 'Enum#_blank,_self,_target,_top'],
-        ],
-        'custom_elements' => [
-            ['u', 'Inline', 'Inline', 'Common'],
         ],
 
         'user_topic_body' => [
