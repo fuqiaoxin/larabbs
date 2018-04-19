@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title','Larabbs') - Laravel 进阶教程</title>
-    <meta name="description" content="@yield('description','LaraBBS 爱好者社区')">
+    <title>@yield('title','Larabbs') - {{ setting('site_name','Laravel 进阶教程') }}</title>
+    <meta name="description" content="@yield('description',setting('seo_description','LaraBBS 爱好者社区'))">
+    <meta name="keyword" content="@yield('keyword',setting('seo_keyword','LaraBBS'))">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('styles')
 </head>
