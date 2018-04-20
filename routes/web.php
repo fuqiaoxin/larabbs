@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/','PagesController@root')->name('root');
+Route::get('/','TopicsController@index')->name('root');
 
 
 // Auth::routes();  此路由等同下面 用户认证的路由 Authentication Routes,Registration Routes,Password Reset Routes
