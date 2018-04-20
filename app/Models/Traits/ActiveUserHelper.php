@@ -89,7 +89,7 @@ trait ActiveUserHelper
             $active_users = collect();
 
             foreach ($users as $user_id => $user) {
-                $user = User::find($user_id);
+                $user = $this->find($user_id);
                 if($user){
                     $active_users->push($user);
                 }
